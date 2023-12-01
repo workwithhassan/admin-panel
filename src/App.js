@@ -12,11 +12,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/starred" element={<Starred />} />
+          <Route path="/new-page" element={<Page />} />
         </Routes>
       </Sidebar>
-      <Routes>
-        <Route path="/new-page" element={<Page />} />
-      </Routes>
     </div>
   );
 }
