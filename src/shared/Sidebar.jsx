@@ -100,6 +100,11 @@ export default function Sidebar() {
     setOpen(false);
   };
 
+  const handleNavigate = (link) => {
+    if (link == "Inbox") navigate('/')
+    if (link == "Starred") navigate('/starred')
+  }
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -142,9 +147,7 @@ export default function Sidebar() {
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
                 }}
-                onClick={() => {
-                  navigate("/")
-                }}
+                onClick={()=>handleNavigate(text)}
               >
                 <ListItemIcon
                   sx={{
