@@ -6,12 +6,11 @@ import {
   Grid,
   Input,
   InputLabel,
-  OutlinedInput,
   TextField,
   TextareaAutosize,
   styled,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
@@ -23,63 +22,77 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 const Page = () => {
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [userName, setUserName] = useState('')
+  const [description, setDescription] = useState('')
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log("Hello", firstName, lastName);
+  }
+
   return (
     <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
       <DrawerHeader />
+      <form onSubmit={handleSubmit}>
       <Grid container spacing={2}>
         <Grid item xs={6}>
           <FormControl fullWidth>
-            <InputLabel htmlFor="component-outlined">Name</InputLabel>
-            <OutlinedInput
-              id="component-outlined"
-              defaultValue=""
-              label="Name"
+            <TextField 
+              id="first-name"
+              label="First Name"
+              value={firstName}
+              onChange={e=>setFirstName(e.target.value)}
             />
           </FormControl>
         </Grid>
         <Grid item xs={6}>
           <FormControl fullWidth>
-            <InputLabel htmlFor="component-outlined">Name</InputLabel>
-            <OutlinedInput
-              id="component-outlined"
-              defaultValue=""
-              label="Name"
+            <TextField 
+              id="last-name"
+              label="Last Name"
+              value={lastName}
+              onChange={e=>setLastName(e.target.value)}
             />
           </FormControl>
         </Grid>
         <Grid item xs={6}>
           <FormControl fullWidth>
-            <InputLabel htmlFor="component-outlined">Name</InputLabel>
-            <OutlinedInput
-              id="component-outlined"
-              defaultValue=""
-              label="Name"
+            <TextField 
+              id="email"
+              label="Email"
+              value={email}
+              onChange={e=>setLastName(e.target.value)}
             />
           </FormControl>
         </Grid>
         <Grid item xs={6}>
           <FormControl fullWidth>
-            <InputLabel htmlFor="component-outlined">Name</InputLabel>
-            <OutlinedInput
-              id="component-outlined"
-              defaultValue=""
-              label="Name"
+            <TextField 
+              id="username"
+              label="Username"
+              value={userName}
+              onChange={e=>setLastName(e.target.value)}
             />
           </FormControl>
         </Grid>
         <Grid item xs={12}>
           <FormControl fullWidth>
             <TextField
-              id="outlined-multiline-flexible"
-              label="Multiline"
+              id="description"
+              label="Description"
               multiline
               rows={5}
+              value={description}
+              onChange={e=>setLastName(e.target.value)}
             />
           </FormControl>
-          <Button variant="contained" sx={{mt:2}}>Submit</Button>
-
+          <Button variant="contained" type="submit" sx={{mt:2}}>Submit</Button>
         </Grid>
       </Grid>
+      </form>
     </Box>
   );
 };
