@@ -65,6 +65,7 @@ fgdfgdfgdfggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg     
         maecenas accumsan lacus vel facilisis. Nulla posuere sollicitudin
         aliquam ultrices sagittis orci a.
       </Typography> */}
+      {/* Added comment */}
       <Button variant="outlined" sx={{ float: "right", marginBottom: "20px" }} onClick={()=>{navigate('/new-page')}}>
         Add <AddIcon sx={{ fontSize: "15px" }} />
       </Button>
