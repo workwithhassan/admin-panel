@@ -66,9 +66,9 @@ fgdfgdfgdfggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg     
         aliquam ultrices sagittis orci a.
       </Typography> */}
       {/* Added comment */}
-      <Button variant="outlined" sx={{ float: "right", marginBottom: "20px" }} onClick={()=>{navigate('/new-page')}}>
+      {/* <Button variant="outlined" sx={{ float: "right", marginBottom: "20px" }} onClick={()=>{navigate('/new-page')}}>
         Add <AddIcon sx={{ fontSize: "15px" }} />
-      </Button>
+      </Button> */}
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
